@@ -1,0 +1,105 @@
+/* Styles for the Calendar */
+/* CSS Reset to remove default margin and padding on elements */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Overall styling for the calendar */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f5f5f5;
+	padding: 20px;
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+/* Styling for the calendar table */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+th,
+td {
+	border: 1px solid #ccc;
+	padding: 10px;
+	text-align: center;
+}
+
+/* Styling for the calendar header row */
+th {
+	background-color: #f9f9f9;
+}
+
+/* Styling for the date cells */
+td {
+	position: relative;
+}
+
+/* Styling for the event highlight colors */
+.event-type-holiday {
+	background-color: #e74c3c;
+	/* Red */
+	color: white;
+}
+
+.event-type-president-day {
+	background-color: #3498db;
+	/* Blue */
+	color: white;
+}
+
+/* Light grid for each date element */
+td:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border: 1px solid #eee;
+}
+
+/* Remove right border for last cell in each row */
+tr td:last-child:before {
+	border-right: none;
+}
+
+/* Remove bottom border for last row */
+tr:last-child td:before {
+	border-bottom: none;
+}
+
+/* Tooltip container styles */
+.event-tooltip-container {
+	position: relative;
+	display: inline-block;
+}
+
+/* Tooltip styles */
+.event-tooltip {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #333;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 5px;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s, visibility 0.3s;
+	white-space: nowrap;
+}
+
+/* Show the tooltip on hover */
+.event-tooltip-container:hover .tooltip {
+	visibility: visible;
+	opacity: 1;
+}
