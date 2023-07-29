@@ -30,6 +30,7 @@ td {
 	border: 1px solid #ccc;
 	padding: 10px;
 	text-align: center;
+	font-size: xx-small;
 }
 
 /* Styling for the calendar header row */
@@ -49,9 +50,61 @@ td {
 	color: white;
 }
 
-.event-type-president-day {
+.event-type-gradingperiodstartstop {
 	background-color: #3498db;
 	/* Blue */
+	color: white;
+}
+
+.event-type-firstdayofschool {
+	background-color: #f1c40f;
+	/* Yellow */
+	color: white;
+}
+
+.event-type-earlyrelease {
+	background-color: #2ecc71;
+	/* Green */
+	color: white;
+}
+
+.event-type-teacherworkday {
+	background-color: #9b59b6;
+	/* Purple */
+	color: white;
+}
+
+.event-type-staffdevelopment {
+	background-color: #34495e;
+	/* Dark Blue */
+	color: white;
+}
+
+.event-type-studentholiday {
+	background-color: #95a5a6;
+	/* Gray */
+	color: white;
+}
+
+.event-type-lastdayofschool {
+	background-color: #e67e22;
+	/* Orange */
+	color: white;
+}
+
+.event-type-weekend {
+	background-color: #9c9d9f;
+	/* Light Gray */
+	color: black;
+}
+.event-type-135weekend {
+	background-color: #f5f29b;
+	/* Light Gray */
+	color: black;
+}
+.event-type-badweatherday {
+	background-color: #643ce7;
+	/* Red */
 	color: white;
 }
 
@@ -79,7 +132,7 @@ tr:last-child td:before {
 /* Tooltip container styles */
 .event-tooltip-container {
 	position: relative;
-	display: inline-block;
+	/*display: inline-block;*/
 }
 
 /* Tooltip styles */
@@ -96,10 +149,12 @@ tr:last-child td:before {
 	opacity: 0;
 	transition: opacity 0.3s, visibility 0.3s;
 	white-space: nowrap;
+	font-size: xx-small;
+	z-index: 1;
 }
 
 /* Show the tooltip on hover */
-.event-tooltip-container:hover .tooltip {
+.event-tooltip-container:hover .event-tooltip {
 	visibility: visible;
 	opacity: 1;
 }
