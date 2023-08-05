@@ -82,8 +82,6 @@ school_calendar_data = {
 @app.get("/isd/{district_id}/year/{school_year}")
 def get_school_calendar(district_id: str, school_year: str):
 	# Assuming school_year will be in the format "YYYY-YYYY" (e.g., "2022-2023")
-	print("district_id: ", district_id)
-	print("school_year: ", school_year)
 	if not school_calendar_data:
 		return {"error": f"District not found: {district_id}"}
 	
@@ -94,6 +92,11 @@ def get_school_calendar(district_id: str, school_year: str):
 	events = years.get(school_year)
 	if not events:
 		return {"error": f"School year not found. School year: {school_year} District: {district_id}"}
+	
+	# Append the district ID and school year to the events
+	for event_date, event_data in events.items():
+		event_data["district_id"] = district_id
+		event_data["school_year"] = school_yearggggggggggggggb               
 	
 	print(json.dumps(events, indent=4))
 	
