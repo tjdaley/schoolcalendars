@@ -96,7 +96,7 @@ def get_school_calendar(district_id: str, school_year: str):
 	# Append the district ID and school year to the events
 	for event_date, event_data in events.items():
 		event_data["district_id"] = district_id
-		event_data["school_year"] = school_yearggggggggggggggb               
+		event_data["school_year"] = school_year
 	
 	print(json.dumps(events, indent=4))
 	
